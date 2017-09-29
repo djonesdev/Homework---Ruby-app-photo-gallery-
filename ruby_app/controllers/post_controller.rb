@@ -13,15 +13,15 @@ set :views, Proc.new { File.join(root, 'views') }
 	  $posts = [{
       title: "Post 1",
       body: 'https://i.ytimg.com/vi/E9U9xS4thxU/hqdefault.jpg'
-  },
-  {
-      title: "Post 2",
-      body: 'https://i.pinimg.com/736x/fc/ea/9a/fcea9a5369ebbdca95dca1c0aa1e1a51--funny-cat-humor-cats-humor.jpg'
-  },
-  {
-      title: "Post 3",
-      body: 'https://i.ytimg.com/vi/9nZMHBDw8os/hqdefault.jpg'
-  }]
+	  },
+	  {
+	      title: "Post 2",
+	      body: 'https://i.pinimg.com/736x/fc/ea/9a/fcea9a5369ebbdca95dca1c0aa1e1a51--funny-cat-humor-cats-humor.jpg'
+	  },
+	  {
+	      title: "Post 3",
+	      body: 'https://i.ytimg.com/vi/9nZMHBDw8os/hqdefault.jpg'
+	  }]
 
 
 	get "/posts" do 
@@ -61,6 +61,7 @@ set :views, Proc.new { File.join(root, 'views') }
 		id = params[:id].to_i
 		$posts[id][:title] = params[:title]
 		$posts[id][:body] = params[:body]
+		$posts[id][:comment] = params[:comment]
 
 		redirect "/posts/#{id}"
 	end

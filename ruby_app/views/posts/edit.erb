@@ -6,9 +6,13 @@
   <input type="text" name="title" value="<%= @post[:title] %>">
 
   <label for="body">Body: </label>
-  <textarea name="body"> <img src='<%= @post[:body] %>'></textarea>
+  <textarea name="body"> <%= @post[:body] %></textarea>
+
+  <label for="comment"> Comment: </label>
+  	<textarea type="text" name="comment" value="<%= @post[:comment] %>"> </textarea>
 
   <input type="hidden" name="_method" value="PUT">
 
   <input type="submit" value="Update">
 </form>
+

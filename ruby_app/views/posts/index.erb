@@ -1,8 +1,16 @@
+
 	<h1><%= @page_header %></h1>
 	
-<% @posts.each do |post| %>
+<% @posts.each_with_index do |post,index| %>
+	<h2> Post Title: <%= post[:title] %></h2>
+	<a href="/posts/<%= index %>">
+	<img src =<%= post[:body] %>> </img>
+	</a>
+	<li>Comment: <%= post[:comment] %></li>
+	<a href="/posts/<%= index %>/edit"><button>EDIT</button></a>
 
-	<h2><%= post[:title] %></h2>
-	<img src ='<%= post[:body] %>'></img>
-
+	<form action="/posts/<%= index %>" method='POST'>
+		<input type="hidden" name="_method" value="DELETE">
+		<input type="submit" value="Delete">
+	</form>
 <% end %>

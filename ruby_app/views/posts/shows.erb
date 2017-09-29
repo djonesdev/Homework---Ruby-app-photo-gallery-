@@ -3,6 +3,9 @@
 
 	<h2> Post Title: <%= @post[:title] %></h2>
 	<img src="<%= @post[:body] %>"></img>
+	<ul>
+	 <li>Comment: <%= @post[:comment]%> </li>
+	</ul>
 	<a href="/posts"><button>GO BACK</button></a>
 	<button>EDIT</button>
 	<button>DELETE</button>
